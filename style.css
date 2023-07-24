@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lora;
+    font-size: 18px;
+    color: #ffffff;
+/* by default backgroud images will tile/repeat across the 
+whole background of an element, which in this case is desireable */
+    background-image: url(assets/background.svg);
+    /* this will fix the widh of our page at 640 px */
+    width: 640px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 40px;
+}
