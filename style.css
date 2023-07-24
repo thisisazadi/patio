@@ -7,15 +7,53 @@
 body {
     font-family: Lora;
     font-size: 18px;
+    /* line-height acts as a multiplier of the font-size  (in this case it would be 18 * 1.5 = 27px) */
+    line-height: 1.5;
     color: #ffffff;
 /* by default backgroud images will tile/repeat across the 
 whole background of an element, which in this case is desireable */
     background-image: url(assets/background.svg);
     /* this will fix the widh of our page at 640 px */
     width: 640px;
+/* by using auto margins, our column of content is centred on the page */
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 40px;
+
+}
+
+.cover {
+    height: 100%;
+    width: 100%;
 }
 
 header {
     background-color: #ffffff;
+    /* padding creates space around  the outside our content and pushes the edges of the box away  */
     padding: 40px;
+}
+
+nav {
+    background-color: #f05d5d;
+    /* we can spacify all the padding sides in one shortand which goes in the same order as a clockface (top, right, bottom & left) */
+    padding: 20px 40px 20px 40px;
+}
+
+/* this will grab only a tags inside of header tags */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+section {
+    background-color: #5000ff;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 32px;
+/* line-height gets added in equal mesure to the top *and* the bottom of text in css, which is different from graphics programs */
+    line-height: 1.2;
 }
