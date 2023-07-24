@@ -13,8 +13,8 @@ body {
 /* by default backgroud images will tile/repeat across the 
 whole background of an element, which in this case is desireable */
     background-image: url(assets/background.svg);
-    /* this will fix the widh of our page at 640 px */
-    width: 640px;
+    /* this will make our page width fluid up until it reaches 640 px width, and then it will stop growing. this is an is way to make our websites responsive by default */
+    max-width: 640px;
 /* by using auto margins, our column of content is centred on the page */
     margin-left: auto;
     margin-right: auto;
@@ -23,9 +23,43 @@ whole background of an element, which in this case is desireable */
 
 }
 
-.cover {
+/* these styles will get applied to any elements in our html with a class of 'image' */
+.image {
+    padding: 0;
+}
+
+.image img {
     height: 100%;
     width: 100%;
+}
+
+.map {
+    /* this will stretch our image across the entire width of the section  */
+    width: 100%;
+}
+
+/* this will grab all the paragraphs inside of our contact section */
+.contact p {
+    margin-top: 20px;
+}
+
+.contact a {
+    color: #ffffff;
+    text-decoration: none;
+    /* border can be added to element and go around the outside of the padding (but inside of the box) */
+    border-bottom: solid 2px #f05d5d;
+    /* this will creat 1px of space between the content and the border */
+    padding-bottom: 1px;
+}
+
+blockquote {
+    font-size: 32px;
+    line-height: 1.2;
+    /* the font-style property allows us to make our text italic */
+    font-style: italic;
+/*  */
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 header {
@@ -52,8 +86,62 @@ section {
     padding: 40px;
 }
 
+/* thes style will get applied when we hover over each nav link  */
+nav a:hover {
+    color: #5000ff;
+    border-bottom: solid 2px #ffffff;
+}
+
 h2 {
     font-size: 32px;
 /* line-height gets added in equal mesure to the top *and* the bottom of text in css, which is different from graphics programs */
     line-height: 1.2;
+}
+
+/* when our screen width is below 740px, these will be applied, which is an extremely powerful feature of css. it allows us to conditionally apply styles at certain scree widths - this is called a *media query* */
+@media (max-width: 740px) {
+
+    /* these styles will be applied to *both* the section and header */
+    section, header {
+        padding: 20px;
+    }
+
+    nav {
+        padding: 10px 20px 10px 20px;
+    }
+
+    h2, blockquote {
+        font-size: 24px;
+    }
+
+    body {
+        padding-top: 0;
+        font-size: 16px;
+    }
+
+    nav a {
+        /* this will force our navigation links to take up all the available width and stack on top of each other (a bit like header, section and nav elements) */
+        display: block;
+    }
+/* this will remove the border on mobile/tablet/touch devices */
+
+    nav a:hover {
+        border: none;
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        font-size: 26px;
+    }
+
+    section {
+        padding: 60px;
+    }
 }
